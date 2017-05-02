@@ -10,6 +10,10 @@ class User < ApplicationRecord
 
   validates :email, :username, presence: true
   validates :email, :username, uniqueness: true
+  validates :username, :length => { :in => 5..40 }
+  validates :username, :format => { :with => /\A[a-zA-Z0-9_]+\z/, 
+  	:message => "Можно использовать только латинские буквы, цифры и знак подчеркивания '_'" }
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
   attr_accessor :password
 
@@ -49,5 +53,5 @@ class User < ApplicationRecord
   end
 
 
-  
+
 end
