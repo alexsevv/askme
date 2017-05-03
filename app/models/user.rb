@@ -22,6 +22,8 @@ class User < ApplicationRecord
 
   before_save :encrypt_password
 
+  before_validation { |user| user.username = user.username.downcase }
+
   def encrypt_password
   	if self.password.present?
 	  	#создаем т.н. "соль" - рандомная строка усложняющая задачу хакерам
@@ -51,7 +53,6 @@ class User < ApplicationRecord
   		nil
   	end
   end
-
 
 
 end
