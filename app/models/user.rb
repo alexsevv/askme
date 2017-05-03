@@ -10,10 +10,10 @@ class User < ApplicationRecord
 
   validates :email, :username, presence: true
   validates :email, :username, uniqueness: true
-  validates :username, :length => { :in => 5..40 }
-  validates :username, :format => { :with => /\A[a-zA-Z0-9_]+\z/, 
-  	:message => "Можно использовать только латинские буквы, цифры и знак подчеркивания '_'" }
-  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+  validates :username, format: {with: /\A\w{5,40}\z/,
+  	message: "Можно использовать только латинские буквы, цифры от 5 до 40 символов и знак подчеркивания '_'"}
+
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-zа-я]{2,})\z/i
 
   attr_accessor :password
 
@@ -45,7 +45,7 @@ class User < ApplicationRecord
   def self.authenticale(email, password)
   	user = find_by(email: email) # сперва находим кандидата на email
 
-  	# обратите внимание: сравнивается password_hash, а оригинальный пароль так никогда 
+  	# обратите внимание: сравнивается password_hash, а оригинальный пароль так никогда
   	# и не сохраняется нигде
   	if user.present? && user.password_hash == User.hash_to_string(OpenSSL::PKCS5.pbkdf2_hmac(password, user.password_salt, ITERATIONS, DIGEST.length, DIGEST))
   		user
