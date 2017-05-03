@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validates :username, format: {with: /\A\w{5,40}\z/,
   	message: "Можно использовать только латинские буквы, цифры от 5 до 40 символов и знак подчеркивания '_'"}
 
-  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-zа-я]{2,})\z/i
+  validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-zа-я]{2,})\z/i
 
   attr_accessor :password
 
