@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     @user = User.new(
       name: 'Alex',
       username: 'Alexsevv',
-      avatar_url: 'https://pp.userapi.com/c320624/v320624310/42cc/kema8ELCG4k.jpg'
+      #avatar_url: 'https://pp.userapi.com/c320624/v320624310/42cc/kema8ELCG4k.jpg'
       )
 
     @questions = [
