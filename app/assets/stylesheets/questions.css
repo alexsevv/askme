@@ -41,3 +41,8 @@
 .question-actions a {
   margin-left: 10px;
 }
+
+.number-of-questions {
+  padding: 3px;
+  font-weight: bold;
+}

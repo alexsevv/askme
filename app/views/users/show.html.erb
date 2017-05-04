@@ -38,6 +38,10 @@
 <div class="column3-4">
   <div class="user-questions buffer-both">
     <div class="questions-list">
+      <div class="number-of-questions">
+        Всего <%= @questions.count %>
+        <%= sklonenie(@questions.count, 'вопрос', 'вопроса', 'вопросов') %>:
+      </div>
       <% @questions.each do |question| %>
         <%= render partial: 'questions/question', object: question %>
     <% end %>
