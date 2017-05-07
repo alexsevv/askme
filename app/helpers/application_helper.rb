@@ -1,12 +1,4 @@
 module ApplicationHelper
-  def user_avatar(user)
-    if user.avatar_url.present?
-      user.avatar_url
-    else
-      asset_path 'avatar.jpg'
-    end
-  end
-
   def sklonenie(number, krokodil, krokodila, krokodilov)
     if number == nil || !number.is_a?(Numeric)
       number = 0
@@ -30,5 +22,4 @@ module ApplicationHelper
       return krokodilov
     end
   end
-
 end
