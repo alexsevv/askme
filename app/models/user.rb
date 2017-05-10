@@ -42,7 +42,7 @@ class User < ApplicationRecord
   	password_hash.unpack('H*')[0]
   end
 
-  def self.authenticale(email, password)
+  def self.authenticate(email, password)
   	user = find_by(email: email) # сперва находим кандидата на email
 
   	# обратите внимание: сравнивается password_hash, а оригинальный пароль так никогда
