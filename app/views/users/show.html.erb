@@ -1,4 +1,6 @@
-<div class="user-header text-center">
+<div class="user-header text-center" id="colorjs">
+  <button class="color" id="white" name="button" value="#43c2ba" onclick='change_color(this)'>светлая</button>
+  <button class="color" id="black" name="button" value="#005a55" onclick='change_color(this)'>темная</button>
   <h1 class="title-medium">
     <%= @user.name %>
   </h1>
