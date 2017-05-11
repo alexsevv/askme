@@ -11,7 +11,7 @@ module UsersHelper
     if user.name.present?
       user.name
     else
-      content_tag 'span', '', class: "fa fa-user-secret"
+      content_tag 'span', '', class: "fa fa-user-secret", title: "не указано имя"
     end
   end
 end
