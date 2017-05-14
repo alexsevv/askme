@@ -5,10 +5,14 @@
 
   <% @users.each do |user| %>
     <div class="users-list-item">
-      <div class="user-image-div user-image-div-small">
-        <%= link_to image_tag(user_avatar(user), class: 'user-image'), user_path(user) %>
-      </div>
-      &nbsp;<%= user_name(user) %>&nbsp;
+      <% if user.username == "admin" %>
+        <div class="user-image-div user-image-div-small" style="border: 4px solid #FFD700;">
+      <% else %>
+        <div class="user-image-div user-image-div-small">
+      <% end%>
+          <%= link_to image_tag(user_avatar(user), class: 'user-image'), user_path(user) %>
+        </div>
+        &nbsp;<%= user_name(user) %>&nbsp;
     </div>
   <% end %>
 </div>
