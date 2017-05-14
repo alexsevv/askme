@@ -15,7 +15,7 @@
 
   	<div class="question-date">
   	  <%= l(question.created_at, format: :short) %>
-      <% if question.author.present? %>
+      <% if question.author %>
         Вопрос от: <%= link_to User.find_by(id: question.author_id).username,
                      user_path(User.find_by(id: question.author_id)) %>
       <% else %>
