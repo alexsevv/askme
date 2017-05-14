@@ -30,6 +30,11 @@
           <%= f.text_field :name, class: 'form-text-field' %>
         </div>
 
+        <div class="form-field">
+          <%= f.label 'Цвет фона', class: 'form-label' %>
+          <%= f.color_field :header_color, value: "#005a55", class: 'form-color-field' %>
+        </div>
+
         <div class="form-filed">
           <%= f.label :password, 'Пароль', class: 'form-label' %>
           <%= f.password_field :password, class: 'form-text-field' %>
