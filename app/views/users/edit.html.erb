@@ -33,11 +33,9 @@
           <%= f.text_field :avatar_url, class: 'form-text-field' %>
         </div>
 
-        <div class="form-filed">
-          <%= f.label :header_color, 'Код цвета фона', class: 'form-label' %>
-          <%= f.text_field :header_color, class: 'form-text-field' %>
-
-
+        <div class="form-field">
+          <%= f.label 'Цвет фона', class: 'form-label' %>
+          <%= f.color_field :header_color, class: 'form-color-field' %>
         </div>
 
         <div class="buffer-top-large buffer-bottom">

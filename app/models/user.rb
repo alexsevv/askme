@@ -11,8 +11,9 @@ class User < ApplicationRecord
   validates :email, :username, presence: true
   validates :email, :username, uniqueness: true
   validates :username, format: {with: /\A\w{5,40}\z/,
-  	message: "Можно использовать только латинские буквы, цифры от 5 до 40 символов и знак подчеркивания '_'"}
-
+    message: "Можно использовать только латинские буквы, цифры от 5 до 40 символов и знак подчеркивания '_'"}
+  validates :header_color, format: {with: /#[a-fA-F0-9]{6}/,
+    message: "Ах ты жук, нельзя лОмать мне сайт:)"}
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-zа-я]{2,})\z/i
 
   attr_accessor :password
