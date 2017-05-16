@@ -11,12 +11,11 @@
 </head>
 
 <body>
-
   <div class="header">
-  	<div class="container">
-  	  <div class="header-logo">
-  	    <h1 class="header-title"><%= link_to "хорошие вопросы", root_path %></h1>
-  	  </div>
+    <div class="container">
+      <div class="header-logo">
+        <h1 class="header-title"><%= link_to "хорошие вопросы", root_path %></h1>
+      </div>
 
       <div class="header-nav">
         <% if current_user %>
@@ -27,11 +26,11 @@
           <%= link_to 'Войти', log_in_path, class: 'button button-light button-small' %>
         <% end %>
       </div>
-  	</div>
+    </div>
   </div>
 
   <div class="content">
-  	<div class="container">
+    <div class="container">
       <% if flash.any? %>
         <div class="content-wrapper buffer-both">
           <% flash.each do |name, message| %>
@@ -39,10 +38,8 @@
           <% end %>
         </div>
       <% end %>
-
-  	  <%= yield %>
-  	</div>
+      <%= yield %>
+    </div>
   </div>
-
 </body>
 </html>

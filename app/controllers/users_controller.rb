@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
-
   before_action :load_user, except: [:index, :create, :new]
-
   before_action :authorize_user, except: [:index, :new, :create, :show]
 
   def index
@@ -37,9 +35,7 @@ class UsersController < ApplicationController
 
   def show
     @questions = @user.questions.order(created_at: :desc)
-
     @new_question = @user.questions.build
-
     @questions_count = @questions.count
     @answer_count = @questions.where.not(answer: nil).count
     @unanswered_count = @questions_count - @answer_count
@@ -62,7 +58,6 @@ class UsersController < ApplicationController
   def load_user
     @user ||= User.find params[:id]
   end
-
 
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation,

@@ -6,8 +6,6 @@ class Question < ApplicationRecord
   validates :text, :user, presence: true
   validates :text, length: { maximum: 255 }
 
-
-
   # демонстрация жизненного цикла объкта
   # навесили на все популярные коллбэки свои методы
   #before_validation :before_validation
@@ -28,12 +26,10 @@ class Question < ApplicationRecord
   # динамически сгенерируем пару методов для каждого действия
   # используя возможности руби
   #['validation', 'save', 'create', 'update', 'destroy'].each do |action|
-  	#['before', 'after'].each do |time|
-  	  #define_method("#{time}_#{action}") do
-  	  	#puts "======> #{time}_#{action}"
-  	  #end
-  	#end
+    #['before', 'after'].each do |time|
+      #define_method("#{time}_#{action}") do
+        #puts "======> #{time}_#{action}"
+      #end
+    #end
   #end
-
-
 end
