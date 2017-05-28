@@ -7,6 +7,7 @@ end
 
 gem 'rails', '~> 5.0.2'
 gem 'rails_12factor'
+gem 'recaptcha', require: 'recaptcha/rails'
 gem 'uglifier'
 gem 'jquery-rails'
 
