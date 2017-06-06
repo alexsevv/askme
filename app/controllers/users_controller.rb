@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @hashtags = Hashtag.all
   end
 
   def new
@@ -56,6 +57,10 @@ class UsersController < ApplicationController
 
   def load_user
     @user ||= User.find params[:id]
+  end
+
+  def load_questions
+    @questions = @user.questions.includes(:hashtags).order(created_at: :desc)
   end
 
   def user_params
