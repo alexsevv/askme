@@ -8,6 +8,8 @@ end
 gem 'rails', '~> 5.0.2'
 gem 'rails_12factor'
 gem 'recaptcha', require: 'recaptcha/rails'
+gem 'rails-i18n'
+gem 'rspec-rails'
 gem 'uglifier'
 gem 'jquery-rails'
 
@@ -16,6 +18,7 @@ group :production do
 end
 
 group :development, :test do
+  gem 'factory_girl_rails'
   gem 'sqlite3'
   gem 'byebug', platform: :mri
 end

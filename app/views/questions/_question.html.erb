@@ -13,6 +13,10 @@
       </div>
     <% end %>
 
+    <div class="hashtag buffer-bottom10">
+      <%= question_hashtags(question) %>
+    </div>
+
     <div class="question-date">
       <%= l(question.created_at, format: :short) %>
       <% if question.author %>
