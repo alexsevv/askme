@@ -51,6 +51,7 @@ class UsersController < ApplicationController
   end
 
   private
+
   def authorize_user
     reject_user unless @user == current_user
   end
